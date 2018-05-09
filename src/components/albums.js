@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import styles from '../styles/styles';
 import Album from './album';
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { connect } from 'react-redux';
 //import { loadAlbums } from '../data/albums';
 
@@ -30,13 +30,15 @@ class Albums extends Component {
     
     render() {
         return (
-            <ScrollView>
+            <View style = {{flex: 9}}>
+                <ScrollView>
                 {this.props.display.albums.map((localAlbumList, index) => {
                     return (
                         <Album key = {index} album = {localAlbumList.album} trackNum = {index + 1}/>
                     ); 
                 })}
-            </ScrollView>)
+            </ScrollView>
+            </View>)
     }
 }
 
