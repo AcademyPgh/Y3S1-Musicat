@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import TrackPlayer, { ProgressComponent } from 'react-native-track-player';
-import { play, pause, stop, add, configPlayer } from '../track-player/player-commands';
+import { play, pause, stop, add, next, previous, configPlayer } from '../track-player/player-commands';
 import CurrentTrack from './current-track';
 import ProgressBar from './progress-bar';
 import { createStore } from 'redux';
@@ -40,7 +40,7 @@ export default class PlayerControls extends Component {
 
     render() {
         return (
-            <View>
+            <View style = {{flex: 1}}>
               <Text style={styles.welcome} onPress={play}>
                 Play!
               </Text>
@@ -49,7 +49,13 @@ export default class PlayerControls extends Component {
               </Text>
               <Text style={styles.instructions} onPress={stop}>
                 Stop!
-              </Text>                
+              </Text>     
+              <Text style={styles.instructions} onPress={next}>
+                Next
+              </Text>
+              <Text style={styles.instructions} onPress={previous}>
+                Prev
+              </Text>           
               <CurrentTrack store={store} />  
               <ProgressBar store={store}/>
             </View>

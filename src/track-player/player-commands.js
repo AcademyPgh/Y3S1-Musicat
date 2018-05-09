@@ -24,6 +24,18 @@ const add = (track) => {
     });
 }
 
+const next = () => {
+    TrackPlayer.setupPlayer({}).then(() => {
+        TrackPlayer.skipToNext();
+    });
+}
+
+const previous = () => {
+    TrackPlayer.setupPlayer({}).then(() => {
+        TrackPlayer.skipToPrevious();
+    });
+}
+
 const configPlayer = async () => {
     TrackPlayer.setupPlayer({}).then(() => {
         TrackPlayer.updateOptions({
@@ -42,5 +54,7 @@ module.exports = {
     pause,
     stop,
     add,
+    next,
+    previous,
     configPlayer
 };

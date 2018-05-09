@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import PlayerControls from './player-controls'
 import Albums from './albums'
 import styles from '../styles/styles'
@@ -7,9 +7,9 @@ import styles from '../styles/styles'
 export default class MainScreen extends Component {
   render() {
     return (
-      <View style={{flexDirection: 'row'}}>
-        <Albums store={this.props.store} />
-        <PlayerControls store={this.props.store} />
+      <View style={{flex: 1}}>
+          <Albums store={this.props.store} />
+          <PlayerControls store={this.props.store} />
       </View>
     );
   }

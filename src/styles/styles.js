@@ -3,9 +3,13 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        fontSize: 25,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
+    },
+    trackstyle: {
+        fontSize: 13
     },
     welcome: {
         fontSize: 20,

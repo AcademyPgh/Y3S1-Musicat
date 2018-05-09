@@ -1,4 +1,4 @@
-import {play, pause, stop} from './player-commands';
+import {play, pause, stop, next, previous} from './player-commands';
 
 const eventHandler = async (store, data) => {
     if(data.type == 'playback-state') {
@@ -20,6 +20,12 @@ const eventHandler = async (store, data) => {
     } else if(data.type == 'remote-stop') {
         // Again, we can forward this command to the player using  
         stop();
+    } else if(data.type == 'remote-next') {
+        // Again, we can forward this command to the player using  
+        next();
+    } else if(data.type == 'remote-previous') {
+        // Again, we can forward this command to the player using  
+        previous();
     }
 };
 
