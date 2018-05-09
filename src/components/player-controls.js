@@ -34,10 +34,7 @@ export default class PlayerControls extends Component {
         artist: 'artist1'
         };
 
-        configPlayer().then(() => {
-            add(track);
-            add(track2);
-    });
+        configPlayer();
     }
 
 
