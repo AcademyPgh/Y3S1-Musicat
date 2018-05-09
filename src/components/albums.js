@@ -30,7 +30,7 @@ class Albums extends Component {
     
     render() {
         return (
-            <View style = {{flex: 4}}>
+            <View style = {{flex: 9}}>
                 <ScrollView>
                 {this.props.display.albums.map((localAlbumList, index) => {
                     return (

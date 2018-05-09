@@ -1,13 +1,39 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        fontSize: 25,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+    albumtitle:{
+        fontSize: 20
     },
+    artistname:{
+        fontSize: 15
+    },
+    albuminfo:{
+        paddingLeft: 20,
+    },
+    albumheader:{
+        flexDirection: 'row',
+        paddingBottom: 20,
+        alignItems: 'center'
+    },
+    playercontrols:{
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        padding: 10
+    },
+    bottombar:{
+        flex: 1,
+    },
+
+    mainscreen:{
+        flex: 1,
+        padding: 20,
+    },
+    logo:{
+        width: 150,
+        height: 60
+
+    },
+    
     trackstyle: {
         fontSize: 13
     },
@@ -48,6 +74,11 @@ const styles = StyleSheet.create({
         buffered: {
             backgroundColor: '#797979',
             height: 5
+        },
+        albumpicture: {
+            width: 100,
+            height: 100, 
+            borderRadius: 100
         }
     });
     

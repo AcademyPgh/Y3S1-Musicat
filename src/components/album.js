@@ -5,7 +5,8 @@ import {
   Text, 
   View, 
   Button,
-  TouchableOpacity 
+  TouchableOpacity,
+  Image 
 } from 'react-native';
 import Song from './song';
 import styles from '../styles/styles';
@@ -41,13 +42,18 @@ export default class Album extends Component{
   render() {
     return (
       <View>
-        <TouchableOpacity onPress = {this.toggleShowSongs}> 
-          <Text style={styles.container}>
-            <Text>{this.props.trackNum}. </Text>
-            <Text>{this.props.album.main_artist_name} - </Text>
-            <Text>{this.props.album.title}{'\n'}{'\n'}</Text>
-          </Text>
-        </TouchableOpacity >
+        <View style={styles.albumheader}> 
+          <View style={{flex:1}}>
+            <Image source={{uri: this.props.album.front_cover_art}} style={styles.albumpicture} />    
+          </View>
+          <TouchableOpacity onPress = {this.toggleShowSongs} style={{flex:3}}> 
+            <View style={styles.albuminfo}>
+              {/* <Text>{this.props.trackNum}. </Text> */}
+              <Text style={styles.albumtitle}>{this.props.album.title}</Text>
+              <Text style={styles.artistname}>{this.props.album.main_artist_name}</Text>
+            </View>
+          </TouchableOpacity >
+        </View>
         {this.showSongs()}
       </View>
     );

@@ -40,25 +40,27 @@ export default class PlayerControls extends Component {
 
     render() {
         return (
-            <View style = {{flex: 1}}>
-              <Text style={styles.welcome} onPress={play}>
-                Play!
-              </Text>
-              <Text style={styles.instructions} onPress={pause}>
-                Pause!
-              </Text>
-              <Text style={styles.instructions} onPress={stop}>
-                Stop!
-              </Text>     
-              <Text style={styles.instructions} onPress={next}>
-                Next
-              </Text>
-              <Text style={styles.instructions} onPress={previous}>
-                Prev
-              </Text>           
-              <CurrentTrack store={store} />  
-              <ProgressBar store={store}/>
-            </View>
+          <View style={styles.bottombar}>
+              <View style={styles.playercontrols}>
+                <Text onPress={play}>
+                  Play!
+                </Text>
+                <Text onPress={pause}>
+                  Pause!
+                </Text>
+                <Text onPress={stop}>
+                  Stop!
+                </Text>     
+                <Text onPress={next}>
+                  Next
+                </Text>
+                <Text onPress={previous}>
+                  Prev
+                </Text>   
+              </View>        
+                <CurrentTrack store={store} />  
+                <ProgressBar store={store}/>
+          </View>
           );
     }
 }
