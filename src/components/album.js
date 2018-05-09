@@ -5,6 +5,7 @@ import {
   Text, 
   View, 
   Button,
+  TouchableOpacity 
 } from 'react-native';
 import Song from './song';
 export default class Album extends Component{
@@ -24,26 +25,28 @@ export default class Album extends Component{
       return
     }
     let list = 
-      <Text>
+      <View>
         {this.props.album.tracks.map((song, index) => {return (
-         <Song trackNumber = {song.position} title = {song.title} key = {index} />
+         <Song artist={this.props.album.main_artist_name} album_title={this.props.album.title} album_art={this.props.album.front_cover_art} song={song} key = {index} />
          )})}
-      </Text>;
+      </View>;
       return list
   }
   
   toggleShowSongs() {
     this.setState({showSongs:!this.state.showSongs})
   }
+
   render() {
     return (
-      <Text> 
-        <Text>{this.props.trackNum}. </Text>
-        <Text>{this.props.album.main_artist_name} - </Text>
-        <Text onPress = {this.toggleShowSongs}>
-        {this.props.album.title}{'\n'}{'\n'}</Text>
-        {this.state.showSongs && this.showSongs()}
-      </Text>
+      <View>
+        <TouchableOpacity onPress = {this.toggleShowSongs}> 
+          <Text>{this.props.trackNum}. </Text>
+          <Text>{this.props.album.main_artist_name} - </Text>
+          <Text>{this.props.album.title}{'\n'}{'\n'}</Text>
+        </TouchableOpacity >
+        {this.showSongs()}
+      </View>
     );
   }
 }
