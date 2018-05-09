@@ -7,7 +7,7 @@ import styles from '../styles/styles'
 export default class MainScreen extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={{flexDirection: 'row'}}>
         <Albums store={this.props.store} />
         <PlayerControls store={this.props.store} />
       </View>
