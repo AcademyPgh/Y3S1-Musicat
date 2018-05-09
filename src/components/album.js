@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import Song from './song';
 import styles from '../styles/styles';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 export default class Album extends Component{
   constructor(props) {
       
@@ -39,6 +41,17 @@ export default class Album extends Component{
     this.setState({showSongs:!this.state.showSongs})
   }
 
+  showOpenCloseIcon() {
+    if(this.state.showSongs)
+    {
+      return <Icon name="play" size={30} color="#009" />
+    }
+    else
+    {
+      return <Icon name="rocket" size={30} color="#900" />
+    }
+  }
+
   render() {
     return (
       <View>
@@ -51,6 +64,7 @@ export default class Album extends Component{
               {/* <Text>{this.props.trackNum}. </Text> */}
               <Text style={styles.albumtitle}>{this.props.album.title}</Text>
               <Text style={styles.artistname}>{this.props.album.main_artist_name}</Text>
+              {this.showOpenCloseIcon()}
             </View>
           </TouchableOpacity >
         </View>
