@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-function playbackReducer(state = {}, action) {
+function playbackReducer(state = {playerState: {}, currentTrack: {}}, action) {
     switch(action.type) {
         case 'PLAYBACK_INIT':
             return {
@@ -16,6 +16,11 @@ function playbackReducer(state = {}, action) {
             return {
                 ...state,
                 currentTrack: action.track
+            };
+        case 'PLAYBACK_UPDATE':
+            return {
+                ...state,
+                playerState: action.state
             };
         default:
             return state;

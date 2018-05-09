@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text } from 'react-native';
 import { connect } from 'react-redux';
 import { loadAlbums } from '../data/albums';
+import styles from '../styles/styles'
 
 class Albums extends Component {
     componentDidMount() {
