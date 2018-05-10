@@ -15,7 +15,7 @@ function playbackReducer(state = {playerState: {}, currentTrack: {}}, action) {
         case 'PLAYBACK_TRACK':
             return {
                 ...state,
-                currentTrack: action.track
+                test: "test"
             };
         case 'PLAYBACK_UPDATE':
             return {

@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         padding: 10
     },
     bottombar:{
-        flex: 1,
+        flex: 7,
     },
 
     mainscreen:{
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
         albumpicture: {
             width: 100,
             height: 100, 
-            borderRadius: 100
+            borderRadius: 50
         }
     });
     

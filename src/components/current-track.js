@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import styles from '../styles/styles'
+import TrackPlayer from 'react-native-track-player';
 
 class CurrentTrack extends Component {
     render () {
         return (
-            <Text>
+            <View>
                 <Text>
-                {this.props.playback.state}{"\n"}
+                    {this.props.currentTrack}
                 </Text>
-                <Text>
-                {this.props.playback.playerState.info}
-                </Text>
-            </Text>
+            </View>
         )
     }
 }
 
 function mapStateToProps(state) {
     return {
-        playback: state.playback
+        playback: state.playback,
+        currentTrack: state.playback.test
     };
 }
 

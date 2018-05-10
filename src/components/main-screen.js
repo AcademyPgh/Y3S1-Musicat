@@ -8,11 +8,11 @@ export default class MainScreen extends Component {
   render() {
     return (
       <View style={styles.mainscreen}>
-      <View style={{flex:1,alignItems:'center'}}>
-        <Image source={require('../../musicat_logo.jpeg')} style={styles.logo}></Image>
-      </View>
-          <Albums store={this.props.store} />
-          <PlayerControls store={this.props.store} />
+        <View style={{flex:1,alignItems:'center'}}>
+          <Image source={require('../../musicat_logo.jpeg')} style={styles.logo}></Image>
+        </View>
+        <Albums store={this.props.store} />
+        <PlayerControls store={this.props.store} />
       </View>
     );
   }

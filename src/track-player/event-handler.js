@@ -1,4 +1,5 @@
 import {play, pause, stop, next, previous} from './player-commands';
+import TrackPlayer from 'react-native-track-player';
 
 const eventHandler = async (store, data) => {
     if(data.type == 'playback-state') {
@@ -10,6 +11,7 @@ const eventHandler = async (store, data) => {
         store.dispatch({
             type: 'PLAYBACK_TRACK',
             state: data.state
+            
         })
     } else if(data.type == 'remote-play') {
         // The play button was pressed, we can forward this command to the player using
