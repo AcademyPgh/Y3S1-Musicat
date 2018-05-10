@@ -44,11 +44,11 @@ export default class Album extends Component{
   showOpenCloseIcon() {
     if(this.state.showSongs)
     {
-      return <Icon name="play" size={30} color="#009" />
+      return <Icon name="angle-down" size={30} color="#009" />
     }
     else
     {
-      return <Icon name="rocket" size={30} color="#900" />
+      return <Icon name="angle-right" size={30} color="#6cc7e6" />
     }
   }
 

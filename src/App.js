@@ -9,6 +9,21 @@ const store = createStore(reducers);
 TrackPlayer.registerEventHandler(createEventHandler(store));
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    setInterval(this.getTrackInfo, 500);
+  }
+
+  async getTrackInfo() {
+    let trackId = await TrackPlayer.getCurrentTrack();
+    let track = await TrackPlayer.getTrack(trackId);
+    store.dispatch({
+      type: 'PLAYBACK_TRACK',
+      state: track
+    });
+  }
+
   render() {
     return (
       <MainScreen store={store} />

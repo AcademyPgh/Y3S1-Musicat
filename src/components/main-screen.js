@@ -9,7 +9,7 @@ export default class MainScreen extends Component {
     return (
       <View style={styles.mainscreen}>
       <View style={{flex:1,alignItems:'center'}}>
-        <Image source={require('../../musicat_logo.jpeg')} style={styles.logo}></Image>
+        <Image source={require('../images/musicat.png')} style={styles.logo}></Image>
       </View>
           <Albums store={this.props.store} />
           <PlayerControls store={this.props.store} />

@@ -1,65 +1,41 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
-import TrackPlayer, { ProgressComponent } from 'react-native-track-player';
 import { play, pause, stop, add, next, previous, configPlayer } from '../track-player/player-commands';
 import CurrentTrack from './current-track';
 import ProgressBar from './progress-bar';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import reducers from '../reducers/reducers';
-import createEventHandler from '../track-player/event-handler';
-import styles from '../styles/styles'
-
-const store = createStore(reducers);
-
-TrackPlayer.registerEventHandler(createEventHandler(store));
+import styles from '../styles/styles';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class PlayerControls extends Component {
-
-    static store = null;
-    
-
     componentDidMount(){
-
-        const track = {
-        id: '1',
-        url: 'https://mms.yaharamusic.org/tc?src=https%3A%2F%2Fjsfs.yaharamusic.org%2Fcomplete-submission%2Fthe-hussy-pagan-hiss%2F1-02-right-quick--1480427107000.wav&fmt=mp3&auth=foo',
-        title: 'Title1',
-        artist: 'artist1'
-        };
-        const track2 = {
-        id: '2',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-        title: 'Title2',
-        artist: 'artist1'
-        };
-
         configPlayer();
     }
 
 
     render() {
+      const iconSize = 22;
         return (
           <View style={styles.bottombar}>
               <View style={styles.playercontrols}>
+                <Text onPress={previous}>
+                  <Icon name="step-backward" size={iconSize} color="#6cc7e6" />
+                </Text>  
+                <Text onPress={stop}>
+                  <Icon name="stop" size={iconSize} color="#6cc7e6" />
+                </Text> 
                 <Text onPress={play}>
-                  Play!
+                  <Icon name="play" size={iconSize} color="#6cc7e6"  />
                 </Text>
                 <Text onPress={pause}>
-                  Pause!
+                  <Icon name="pause" size={iconSize} color="#6cc7e6" />
                 </Text>
-                <Text onPress={stop}>
-                  Stop!
-                </Text>     
                 <Text onPress={next}>
-                  Next
+                  <Icon name="step-forward" size={iconSize} color="#6cc7e6" />
                 </Text>
-                <Text onPress={previous}>
-                  Prev
-                </Text>   
+ 
               </View>        
-                <CurrentTrack store={store} />  
-                <ProgressBar store={store}/>
+                <CurrentTrack store={this.props.store} />  
+                <ProgressBar store={this.props.store}/>
           </View>
           );
     }

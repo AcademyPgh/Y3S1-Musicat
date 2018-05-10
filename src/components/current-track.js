@@ -5,13 +5,12 @@ import styles from '../styles/styles'
 
 class CurrentTrack extends Component {
     render () {
+        const track = this.props.playback.currentTrack;
+        const title = track ? track.title : "none";
         return (
             <Text>
                 <Text>
-                {this.props.playback.state}{"\n"}
-                </Text>
-                <Text>
-                {this.props.playback.playerState.info}
+                Now Playing: {title}
                 </Text>
             </Text>
         )

@@ -10,11 +10,9 @@ import reducers from '../reducers/reducers';
 
 /* Component that tells you where in the song you are */
 
-const store = createStore(reducers);
-
 class ProgressBar extends Component {
-    constructor (props){
-        super (props);
+    constructor(props){
+        super(props);
         
         this.getProgress = this.getProgress.bind(this);
         this.formatTime = this.formatTime.bind(this);
@@ -53,7 +51,7 @@ class ProgressBar extends Component {
       duration = (Math.floor(duration));
       let leftover = duration - position;
       let info = this.formatTime(leftover) + ' / ' + this.formatTime(duration);
-      store.dispatch({
+      this.props.store.dispatch({
         type: 'PLAYBACK_UPDATE',
         state: {info: info, duration:duration, position:position}
     })
